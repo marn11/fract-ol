@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   scaling.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 05:52:57 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/13 02:36:35 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/13 02:48:35 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int	main(int argc, char **argv)
+double scaling(double unscaled, double new_min, double new_max, double old_min, double old_max)
 {
-	t_fract	fractal;
-
-	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10)
-		|| argc == 4 && !ft_strncmp(argv[1], "julia", 5))
-	{
-		fractal.title = argv[1];
-		init(&fractal);
-		//render(&fractal);
-		//mlx_loop(fractal.connection);
-	}
-	else
-		return (perror("wrong usage of the program"), exit(EXIT_FAILURE), 1);
+	return (new_max - new_min) * (unscaled - old_min) / (old_max - old_min) + new_min;
 }
+// tldraw to understand

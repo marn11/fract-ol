@@ -2,14 +2,16 @@ NAME = fractol
 
 CC = cc
 
-CFLAGS = 
+CFLAGS =
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
 RM = rm -rf
 
-SRCS = src/main.c \
-			utils/utils1.c \
+SRCS =	src/main.c \
+		src/init.c \
+		src/rendering.c \
+		utils/utils1.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -21,7 +23,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(MLX) -o $(NAME) $(OBJS)
 
-clean: 
+clean:
 	  $(RM) $(OBJS)
 
 fclean: 	clean

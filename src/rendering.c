@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rendering.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 05:52:57 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/13 02:36:35 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/13 00:31:55 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/13 00:33:17 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int	main(int argc, char **argv)
+void	render(t_fract *fractal)
 {
-	t_fract	fractal;
-
-	if (argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10)
-		|| argc == 4 && !ft_strncmp(argv[1], "julia", 5))
-	{
-		fractal.title = argv[1];
-		init(&fractal);
-		//render(&fractal);
-		//mlx_loop(fractal.connection);
-	}
-	else
-		return (perror("wrong usage of the program"), exit(EXIT_FAILURE), 1);
+	
 }
