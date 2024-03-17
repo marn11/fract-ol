@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/17 23:42:58 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/17 23:43:04 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	values(t_fract *fractal)
 {
-
+	
 }
 void	init(t_fract *fractal)
 {
