@@ -2,5 +2,9 @@
     "files.associations": {
         "fractol.h": "c",
         "string.h": "c"
+    },
+    "github.copilot.advanced": {
+        
+
     }
 }
