@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/16 17:43:29 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/17 03:35:40 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 # define WIDTH 800
 # define HEIGHT 800
+# define HYPO 4
+# define ITER_MAX 100 // ghi definihom f struct 7it aykhsk tbdl lvalue dialhom at times
 
 typedef struct s_img
 {
@@ -39,15 +41,17 @@ typedef struct s_cmpx
 typedef struct s_fract
 {
 	char	*title;
-	void	*connection; //mlx init
-	void	*window; // mlx_new_window
+	void	*connection;
+	void	*window;
 	t_img	img;
 	t_cmpx	z;
 	t_cmpx	c;
+
 }	t_fract;
 
 void	init(t_fract *fractal);
 void	render(t_fract *fractal);
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
+void	values(t_fract *fractal);
 
 #endif

@@ -11,7 +11,6 @@ RM = rm -rf
 SRCS =	src/main.c \
 		src/init.c \
 		src/rendering.c \
-		src/test.c \
 		src/scaling.c \
 		utils/utils1.c \
 
