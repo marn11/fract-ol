@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/17 03:30:43 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:57:24 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,23 @@ void	pixel_check(int x, int y, t_fract *fractal)
 	t_cmpx	z;
 	t_cmpx	c;
 	int		i;
+	int		color;
 
 	i = 0;
 	z.r = 0.0;
 	z.i = 0.0;
 	c.r = scale_coords(x, -2, +2, WIDTH - 1);
 	c.i = scale_coords(y, +2, -2, HEIGHT - 1);
-	while (i < ITER_MAX)
+	while (i < fractal->iter_max)
 	{
 		z = total(z,c);
 		if ((z.r * z.r) + (z.i * z.i) > HYPO)
 		{
-			my_pixel_put();
+			color = scale_coords(i, BLACK, WHITE, fractal->iter_max);
+			my_pixel_put(&fractal->img , x, y, color);
 			return ;
 		}
+		i++;
 	}
+	my_pixel_put(&fractal->img, x, y, LIGHT_PINK);
 }
