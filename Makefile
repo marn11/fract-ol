@@ -12,6 +12,7 @@ SRCS =	src/main.c \
 		src/init.c \
 		src/rendering.c \
 		src/scaling.c \
+		src/events.c \
 		utils/utils1.c \
 
 OBJS = $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/19 20:27:39 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/19 22:30:26 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 void	values(t_fract *fractal)
 {
 	fractal->iter_max = 42;
+	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
+}
+
+void	events(t_fract *fractal)
+{
+	mlx_hook(fractal->window, 2, 0, key_press, fractal);
+	// mlx_hook(fractal->window, ButtonPress, ButtonPressMask, mouse_press, fractal);
+	// mlx_hook(fractal->window, DestroyNotify, StructureNotifyMask, close_press, fractal);
 }
 void	init(t_fract *fractal)
 {
@@ -38,6 +47,6 @@ void	init(t_fract *fractal)
 	}
 	fractal->img.addr = mlx_get_data_addr(fractal->img.image, &fractal->img.bpp,
 			&fractal->img.llen, &fractal->img.endian);
-	//events_init(fractal);
+	events(fractal);
 	values(fractal);
 }
