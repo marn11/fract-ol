@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/19 21:04:48 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/20 02:47:10 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	pixel_check(int x, int y, t_fract *fractal)
 	i = 0;
 	z.r = 0.0;
 	z.i = 0.0;
-	c.r = scale_coords(x, -2, +2, WIDTH - 1);
-	c.i = scale_coords(y, +2, -2, HEIGHT - 1);
+	c.r = (scale_coords(x, -2, +2, WIDTH - 1) * fractal->zoom) + fractal->shift_x;
+	c.i = (scale_coords(y, +2, -2, HEIGHT - 1) * fractal->zoom)+ fractal->shift_y;
 	while (i < fractal->iter_max)
 	{
 		z = total(z,c);
-		if ((z.r * z.r) + (z.i * z.i) > HYPO)
+		if ((z.r * z.r) + (z.i * z.i) > HYPO) // magnitude : bch7al b3id 3la l origin
 		{
 			color = scale_coords(i, BLACK, WHITE, fractal->iter_max);
 			my_pixel_put(&fractal->img , x, y, color);

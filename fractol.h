@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/19 22:32:27 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/20 02:36:14 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,11 @@ void	render(t_fract *fractal);
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
 void	values(t_fract *fractal);
 void	my_pixel_put(t_img *img, int x, int y, int color);
+int		mouse_press(int button, int x, int y, t_fract *fractal);  
 void	render(t_fract *fractal);
 void	pixel_check(int x, int y, t_fract *fractal);
 void	events(t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
+int		close_window(t_fract *fractal);
 
 #endif
