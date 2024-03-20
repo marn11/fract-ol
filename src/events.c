@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:36:00 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/20 03:39:59 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/20 03:42:23 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	mouse_press(int button, int x, int y, t_fract *fractal)
 	else if (button == ZOOM_OUT_MOUSE)
 		fractal->zoom /= 1.1;
 	render(fractal);
-	return (0);
+	return (0);//checki had zoom function mzyan
 }
 int	key_press(int keycode, t_fract *fractal)
-{  
+{
 	if (keycode == ESC)
 		close_window(fractal);
 	else if (keycode == LEFT)
