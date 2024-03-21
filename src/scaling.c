@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/20 02:47:10 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/21 03:21:51 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,6 @@
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max)
 {
 	return ((cmp_max - cmp_min) * (pos) / (w_max) + cmp_min);
-}
-
-t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x)
-{
-	t_cmpx	res;
-
-	res.r = z.r + x.r;
-	res.i = z.i + x.i;
-	return (res);
-}
-
-t_cmpx	cmpx_pow(t_cmpx z)
-{
-	t_cmpx	res;
-
-	res.r = (z.r * z.r) - (z.i * z.i);
-	res.i = 2 * z.r * z.i;
-	return (res);
-}
-
-t_cmpx	total(t_cmpx z, t_cmpx c)
-{
-	t_cmpx	z_2;
-	t_cmpx	z_2_c;
-
-	z_2 = cmpx_pow(z);
-	z_2_c = cmpx_sum(z_2, c);
-	return (z_2_c);
 }
 
 void	pixel_check(int x, int y, t_fract *fractal)
@@ -68,5 +40,5 @@ void	pixel_check(int x, int y, t_fract *fractal)
 		}
 		i++;
 	}
-	my_pixel_put(&fractal->img, x, y, TEALL);
+	my_pixel_put(&fractal->img, x, y, BLACK);
 }
