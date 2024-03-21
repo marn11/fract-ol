@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 03:44:36 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:24:01 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,59 @@ t_cmpx	cmpx_pow(t_cmpx z)
 	res.i = 2 * z.r * z.i;
 	return (res);
 }
-
-t_cmpx	total(t_cmpx z, t_cmpx c)
+static int	atoip(const char *s, int i, int sign)
 {
-	t_cmpx	z_2;
-	t_cmpx	z_2_c;
+	unsigned long	nb;
+	int				digc;
 
-	z_2 = cmpx_pow(z);
-	z_2_c = cmpx_sum(z_2, c);
-	return (z_2_c);
+	nb = 0;
+	digc = 0;
+	while (s[i] >= 48 && s[i] <= 57)
+	{
+		digc++;
+		if (digc == 20)
+		{
+			if (sign == -1)
+				return (0);
+			else
+				return (-1);
+		}
+		nb = nb * 10 + s[i++] - 48;
+	}
+	if (nb > LONG_MAX)
+	{
+		if (sign == -1)
+			return (0);
+		else
+			return (-1);
+	}
+	return ((int)(nb * sign));
 }
 
-double	atof(char *s)
+int	ft_atoi(const char *nptr)
 {
-	int		i;
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (nptr[i] == 48)
+		i++;
+	result = atoip(nptr, i, sign);
+	return (result);
+}
+double	atod(char *s)
+{
 	long	before_comma;
 	double	after_comma;
 	double	power;
@@ -52,25 +91,20 @@ double	atof(char *s)
 	after_comma = 0;
 	sign = 1;
 	power = 1;
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
-		i++;
-	while (s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
+	while (s && ((*s >= 9 && *s <= 13) || *s == 32))
+		s++;
+	while (*s == '-' || *s == '+')
+		if (*s++ == '-')
 			sign *= -1;
-		i++;
-	}
-	while (s[i] != '.' && s[i])
-	{
-		before_comma = before_comma * 10 + (s[i] - '0');
-		i++;
-	}
-	if (s[i] == '.')
-		i++;
-	while (s[i])
+	while (s && (*s != '.' && *s))
+		before_comma = before_comma * 10 + (*s++ - '0');
+	if (*s == '.')
+		s++;
+	while (*s)
 	{
 		power /= 10;
-		after_comma = after_comma + (s[i++] - '0') * power;
+		after_comma = after_comma + (*s++ - '0') * power;
 	}
 	return ((before_comma + after_comma) * sign);
 }
+

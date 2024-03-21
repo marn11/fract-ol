@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 03:38:35 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:10:49 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <mlx.h>
 # include <stdio.h>
 # include <math.h>
+# include <limits.h>
 # include <stdlib.h>
 # include "utils/utils.h"
 
@@ -97,22 +98,27 @@ typedef struct s_fract
 	double	zoom;
 	double	shift_y;
 	double	shift_x;
+	double	julia_x;
+	double	julia_y;
 }	t_fract;
 
+void	ft_putstr_fd(char *s, int fd);
 void	init(t_fract *fractal);
 void	render(t_fract *fractal);
-double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
 void	values(t_fract *fractal);
 void	my_pixel_put(t_img *img, int x, int y, int color);
-int		mouse_press(int button, int x, int y, t_fract *fractal);
 void	render(t_fract *fractal);
 void	pixel_check(int x, int y, t_fract *fractal);
 void	events(t_fract *fractal);
+double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
+double	atod(char *s);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		mouse_press(int button, int x, int y, t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
 int		close_window(t_fract *fractal);
 t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x);
 t_cmpx	cmpx_pow(t_cmpx z);
 t_cmpx	total(t_cmpx z, t_cmpx c);
-double	atof(char	*s);
+size_t	ft_strlen(const char *s);
 
 #endif
