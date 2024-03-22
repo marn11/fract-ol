@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:36:00 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 03:14:49 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/22 01:40:14 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ int close_window(t_fract *fractal)
 	mlx_destroy_window(fractal->connection, fractal->window);
 	exit(0);
 }
-int	mouse_press(int button, int x, int y, t_fract *fractal)
+int	mouse_press(int button ,int x, int y ,t_fract *fractal)
 {
+	t_cmpx	mouse;
+
+	mouse.r = scale_coords(x, -2, +2, WIDTH - 1);
+	mouse.i = scale_coords(y, -2, +2, HEIGHT- 1);
 	if (button == ZOOM_IN_MOUSE)
 		fractal->zoom /= 1.05;
 	else if (button == ZOOM_OUT_MOUSE)

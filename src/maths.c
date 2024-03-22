@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 18:24:01 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/21 20:56:10 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	ft_atoi(const char *nptr)
 	result = atoip(nptr, i, sign);
 	return (result);
 }
-double	atod(char *s)
+double	ft_atod(char *s)
 {
 	long	before_comma;
 	double	after_comma;
@@ -91,12 +91,12 @@ double	atod(char *s)
 	after_comma = 0;
 	sign = 1;
 	power = 1;
-	while (s && ((*s >= 9 && *s <= 13) || *s == 32))
+	while ((*s >= 9 && *s <= 13) || *s == 32)
 		s++;
 	while (*s == '-' || *s == '+')
 		if (*s++ == '-')
 			sign *= -1;
-	while (s && (*s != '.' && *s))
+	while (*s != '.' && *s)
 		before_comma = before_comma * 10 + (*s++ - '0');
 	if (*s == '.')
 		s++;
@@ -107,4 +107,3 @@ double	atod(char *s)
 	}
 	return ((before_comma + after_comma) * sign);
 }
-

@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 18:10:49 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/22 01:15:44 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,10 @@ typedef struct s_fract
 	double	shift_x;
 	double	julia_x;
 	double	julia_y;
+	double	start_pos_x;
+	double	start_pos_y;
+	double	end_pos_x;
+	double	end_pos_y;
 }	t_fract;
 
 void	ft_putstr_fd(char *s, int fd);
@@ -111,7 +115,7 @@ void	render(t_fract *fractal);
 void	pixel_check(int x, int y, t_fract *fractal);
 void	events(t_fract *fractal);
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
-double	atod(char *s);
+double	ft_atod(char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		mouse_press(int button, int x, int y, t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
