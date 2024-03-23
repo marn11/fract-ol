@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 17:55:52 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/23 03:48:42 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	pixel_check(int x, int y, t_fract *fractal)
 	int		color;
 
 	i = 0;
-	z.r = (scale_coords(x, -2, +2, WIDTH - 1) * fractal->zoom) + fractal->shift_x;
-	z.i = (scale_coords(y, +2, -2, HEIGHT - 1) * fractal->zoom)+ fractal->shift_y;
+	z.r = (scale_coords(x, fractal->start_pos_x, fractal->end_pos_x, WIDTH - 1)) + fractal->shift_x;
+	z.i = (scale_coords(y, fractal->start_pos_y, fractal->end_pos_y, HEIGHT - 1))+ fractal->shift_y;
 	toggle_fracts(&z, &c, fractal);
 	while (i < fractal->iter_max)
 	{

@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 21:44:49 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/23 03:20:53 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	values(t_fract *fractal)
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
+	fractal->start_pos_x = -2;
+	fractal->end_pos_x =  2;
+	fractal->start_pos_y = 2;
+	fractal->end_pos_y = -2;
 }
 
 void	events(t_fract *fractal)

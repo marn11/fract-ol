@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:36:00 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/22 01:40:14 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/23 03:42:11 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,24 @@ int close_window(t_fract *fractal)
 int	mouse_press(int button ,int x, int y ,t_fract *fractal)
 {
 	t_cmpx	mouse;
+	double	zoom;
 
-	mouse.r = scale_coords(x, -2, +2, WIDTH - 1);
-	mouse.i = scale_coords(y, -2, +2, HEIGHT- 1);
-	if (button == ZOOM_IN_MOUSE)
-		fractal->zoom /= 1.05;
-	else if (button == ZOOM_OUT_MOUSE)
-		fractal->zoom *= 1.05;
-	render(fractal);
-	return (0);
+	if (button == ZOOM_IN_MOUSE || button == ZOOM_OUT_MOUSE)
+	{
+		mouse.r = scale_coords(x, fractal->start_pos_x, fractal->end_pos_x, WIDTH - 1);
+		mouse.i = scale_coords(y, fractal->start_pos_y, fractal->end_pos_y, HEIGHT - 1);
+		if (button == ZOOM_IN_MOUSE)
+			zoom = 0.9;
+		else
+			zoom = 1.1;
+		fractal->zoom *= zoom;
+		fractal->start_pos_x = mouse.r + (fractal->start_pos_x - mouse.r) * zoom;
+		fractal->start_pos_y = mouse.i + (fractal->start_pos_y - mouse.i) * zoom;
+		fractal->end_pos_x = mouse.r + (fractal->end_pos_x - mouse.r) * zoom;
+		fractal->end_pos_y = mouse.i + (fractal->end_pos_y - mouse.i) * zoom;
+		render(fractal);
+	}
+		return (0);
 }
 int	key_press(int keycode, t_fract *fractal)
 {
