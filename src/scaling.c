@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:04:40 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:09:46 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max)
 {
 	return ((cmp_max - cmp_min) * (pos) / (w_max) + cmp_min);
-}
-
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
 }
 
 t_cmpx	total(t_cmpx z, t_cmpx c)

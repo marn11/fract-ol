@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:01:36 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:11:30 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	events(t_fract *fractal)
 	mlx_mouse_hook(fractal->window, mouse_press, fractal);
 	mlx_hook(fractal->window, 17, 0, close_window, fractal);
 }
+
 void	init(t_fract *fractal)
 {
 	fractal->connection = mlx_init();

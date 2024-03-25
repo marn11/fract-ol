@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 21:36:00 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:11:05 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:11:22 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,16 @@ int	mouse_press(int button, int x, int y, t_fract *fractal)
 			zoom = 1.1;
 		fractal->zoom *= zoom;
 		fractal->start_pos_x = (fractal->start_pos_x - mouse.r)
-							* zoom + mouse.r;
+			* zoom + mouse.r;
 		fractal->start_pos_y = (fractal->start_pos_y - mouse.i)
-							* zoom + mouse.i;
-		fractal->end_pos_x = (fractal->end_pos_x - mouse.r) * zoom  + mouse.r;
+			* zoom + mouse.i;
+		fractal->end_pos_x = (fractal->end_pos_x - mouse.r) * zoom + mouse.r;
 		fractal->end_pos_y = (fractal->end_pos_y - mouse.i) * zoom + mouse.i;
 		render(fractal);
 	}
-		return (0);
+	return (0);
 }
+
 int	key_press(int keycode, t_fract *fractal)
 {
 	if (keycode == ESC)
