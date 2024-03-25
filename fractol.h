@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:13:31 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:18:29 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define FRACTOL_H
 
 # include <mlx.h>
-# include <stdio.h>
-# include <math.h>
 # include <limits.h>
-# include <stdlib.h>
 # include "utils/utils.h"
 
 # define WIDTH 800

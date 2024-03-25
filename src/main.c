@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:52:57 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:51:51 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:18:42 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ int	main(int argc, char **argv)
 		mlx_loop(fractal.connection);
 	}
 	else
-		return (perror("wrong usage of the program"), exit(EXIT_FAILURE), 1);
+		return (ft_putstr_fd("wrong usage of the program", 2), exit(EXIT_FAILURE), 1);
 }

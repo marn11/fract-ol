@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:11:30 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:19:07 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	init(t_fract *fractal)
 			WIDTH, HEIGHT, fractal->title);
 	if (!fractal->window)
 	{
-		perror("Error");
+		ft_putstr_fd("Error", 2);
 		exit(1);
 	}
 	fractal->img.image = mlx_new_image(fractal->connection,
@@ -49,7 +49,7 @@ void	init(t_fract *fractal)
 	if (!fractal->img.image)
 	{
 		mlx_destroy_window(fractal->connection, fractal->window);
-		perror("malloc error");
+		ft_putstr_fd("malloc error", 2);
 		exit(1);
 	}
 	fractal->img.addr = mlx_get_data_addr(fractal->img.image, &fractal->img.bpp,
