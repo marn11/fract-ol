@@ -21,10 +21,10 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 %.o: %.c utils/utils.h
-	$(CC) -g $(CFLAGS) -c $< -o $@
+	$(CC) -O3 $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
-			$(CC) -g $(CFLAGS) $(MLX) -o $(NAME) $(OBJS)
+			$(CC) -O3 $(CFLAGS) $(MLX) -o $(NAME) $(OBJS)
 
 clean:
 	  $(RM) $(OBJS)

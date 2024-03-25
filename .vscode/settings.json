@@ -1,10 +1,11 @@
 {
     "files.associations": {
         "fractol.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "ios": "c"
     },
     "github.copilot.advanced": {
-        
+
 
     }
 }

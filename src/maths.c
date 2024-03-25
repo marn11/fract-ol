@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 20:56:10 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 02:12:50 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_cmpx	cmpx_pow(t_cmpx z)
 	res.i = 2 * z.r * z.i;
 	return (res);
 }
+
 static int	atoip(const char *s, int i, int sign)
 {
 	unsigned long	nb;
@@ -80,6 +81,7 @@ int	ft_atoi(const char *nptr)
 	result = atoip(nptr, i, sign);
 	return (result);
 }
+
 double	ft_atod(char *s)
 {
 	long	before_comma;

@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:52:57 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/21 20:54:53 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 02:12:32 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int argc, char **argv)
 		fractal.title = argv[1];
 		if (argc == 4 && !ft_strncmp(argv[1], "julia", 5))
 		{
-		fractal.julia_x = ft_atod(argv[2]);
-		fractal.julia_y = ft_atod(argv[3]);
+			fractal.julia_x = ft_atod(argv[2]);
+			fractal.julia_y = ft_atod(argv[3]);
 		}
 		init(&fractal);
 		render(&fractal);
