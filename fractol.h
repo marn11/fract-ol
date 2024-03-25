@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:04:48 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:13:31 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		mouse_press(int button, int x, int y, t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
 int		close_window(t_fract *fractal);
-int		create_trgb(int t, int r, int g, int b);
 t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x);
 t_cmpx	cmpx_pow(t_cmpx z);
 t_cmpx	total(t_cmpx z, t_cmpx c);
