@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 15:35:21 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:04:48 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@
 # define ZOOM_OUT_MOUSE 5
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
+# define RED "\x1b[31m"
+# define GREEN "\x1b[32m"
+# define YELLOW "\x1b[33m"
+# define RESET "\x1b[0m"
 
 typedef struct s_img
 {

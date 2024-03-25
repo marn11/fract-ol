@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 19:55:14 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:04:40 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,5 @@ void	pixel_check(int x, int y, t_fract *fractal)
 		}
 		i++;
 	}
-	my_pixel_put(&fractal->img, x, y, BLACK);
+	my_pixel_put(&fractal->img, x, y, 0x000000);
 }

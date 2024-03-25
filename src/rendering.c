@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 00:31:55 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 15:35:13 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:04:16 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	render(t_fract *fractal)
 	int	y;
 
 	y = 0;
-	while (y < HEIGHT)
+	while(y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
@@ -36,6 +36,5 @@ void	render(t_fract *fractal)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(fractal->connection, fractal->window,
-		fractal->img.image, 0, 0);
+	mlx_put_image_to_window(fractal->connection, fractal->window, fractal->img.image, 0, 0);
 }
