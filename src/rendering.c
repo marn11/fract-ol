@@ -6,17 +6,17 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 00:31:55 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:13:17 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:35:13 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-void	my_pixel_put(t_img *fract, int x, int y, int color)
+void	my_pixel_put(t_img *image, int x, int y, int color)
 {
 	char	*img;
 
-	img = fract->addr + (y * fract->llen + x * (fract->bpp / 8));
+	img = image->addr + (y * image->llen + x * (image->bpp / 8));
 	*(unsigned int *)img = color;
 }
 

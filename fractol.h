@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:15:19 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:35:21 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	init(t_fract *fractal);
 void	render(t_fract *fractal);
 void	values(t_fract *fractal);
-void	my_pixel_put(t_img *img, int x, int y, int color);
+void	my_pixel_put(t_img *image, int x, int y, int color);
 void	render(t_fract *fractal);
 void	pixel_check(int x, int y, t_fract *fractal);
 void	events(t_fract *fractal);

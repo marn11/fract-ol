@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:14:48 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/25 19:55:11 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ void	pixel_check(int x, int y, t_fract *fractal)
 		z = total(z, c);
 		if ((z.r * z.r) + (z.i * z.i) > HYPO)
 		{
-			color = create_trgb(0, 1.3 * i / fractal->iter_max * 255
-					* fractal->color, 1.5 * i * fractal->color, 1.7
-					* i * fractal->color);
+			color = scale_coords(i, BLACK, WHITE, fractal->color * 3);
 			my_pixel_put(&fractal->img, x, y, color);
 			return ;
 		}
@@ -74,3 +72,4 @@ void	pixel_check(int x, int y, t_fract *fractal)
 	}
 	my_pixel_put(&fractal->img, x, y, BLACK);
 }
+
