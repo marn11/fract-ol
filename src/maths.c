@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/26 11:59:57 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 20:26:34 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ int	ft_atoi(const char *nptr)
 
 double	ft_atod(char *s)
 {
-	long	before_comma;
-	double	after_comma;
-	double	power;
-	int		sign;
+	long		before_comma;
+	double		after_comma;
+	long double	power;
+	int			sign;
 
 	before_comma = 0;
 	after_comma = 0;

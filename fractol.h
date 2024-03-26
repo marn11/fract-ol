@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/26 12:03:21 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:43:53 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ typedef struct s_fract
 	double	end_pos_y;
 }	t_fract;
 
-void	ft_putstr_fd(char *s, int fd);
 void	init(t_fract *fractal);
 void	render(t_fract *fractal);
 void	values(t_fract *fractal);
@@ -92,6 +91,5 @@ int		close_window(t_fract *fractal);
 t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x);
 t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn);
 t_cmpx	total(t_cmpx z, t_cmpx c, t_fract *fract);
-size_t	ft_strlen(const char *s);
 
 #endif

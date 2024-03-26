@@ -20,7 +20,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c utils/utils.h
+%.o: %.c utils/utils.h fractol.h
 	$(CC) -O3 $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
