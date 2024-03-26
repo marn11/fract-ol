@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:18:29 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:03:21 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <mlx.h>
 # include <limits.h>
+# include <math.h>
 # include "utils/utils.h"
 
 # define WIDTH 800
@@ -84,13 +85,13 @@ void	pixel_check(int x, int y, t_fract *fractal);
 void	events(t_fract *fractal);
 double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max);
 double	ft_atod(char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		mouse_press(int button, int x, int y, t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
 int		close_window(t_fract *fractal);
 t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x);
-t_cmpx	cmpx_pow(t_cmpx z);
-t_cmpx	total(t_cmpx z, t_cmpx c);
+t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn);
+t_cmpx	total(t_cmpx z, t_cmpx c, t_fract *fract);
 size_t	ft_strlen(const char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 02:38:08 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 20:09:46 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:03:56 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,24 @@ double	scale_coords(double pos, double cmp_min, double cmp_max, double w_max)
 	return ((cmp_max - cmp_min) * (pos) / (w_max) + cmp_min);
 }
 
-t_cmpx	total(t_cmpx z, t_cmpx c)
+t_cmpx	total(t_cmpx z, t_cmpx c, t_fract *fract)
 {
 	t_cmpx	z_2;
 	t_cmpx	z_2_c;
 
-	z_2 = cmpx_pow(z);
+	z_2 = cmpx_pow(z, !ft_strcmp(fract->title, "tricorn"));
 	z_2_c = cmpx_sum(z_2, c);
 	return (z_2_c);
 }
 
 void	toggle_fracts(t_cmpx *z, t_cmpx *c, t_fract *fractal)
 {
-	if (!ft_strncmp(fractal->title, "mandelbrot", 10))
+	if (!ft_strcmp(fractal->title, "mandelbrot"))
+	{
+		c->r = z->r;
+		c->i = z->i;
+	}
+	else if (!ft_strcmp(fractal->title, "tricorn"))
 	{
 		c->r = z->r;
 		c->i = z->i;
@@ -56,7 +61,7 @@ void	pixel_check(int x, int y, t_fract *fractal)
 	toggle_fracts(&z, &c, fractal);
 	while (i < fractal->iter_max)
 	{
-		z = total(z, c);
+		z = total(z, c, fractal);
 		if ((z.r * z.r) + (z.i * z.i) > HYPO)
 		{
 			color = scale_coords(i, BLACK, WHITE, fractal->color * 3);

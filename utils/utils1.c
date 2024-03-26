@@ -6,30 +6,22 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:16:31 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:15:26 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:20:50 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t			i;
-	unsigned char	c1;
-	unsigned char	c2;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
-	{
-		c1 = (unsigned char)s1[i];
-		c2 = (unsigned char)s2[i];
-		if (c1 != c2)
-		{
-			return (c1 - c2);
-		}
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 size_t	ft_strlen(const char *s)

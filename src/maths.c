@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/25 02:12:50 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:59:57 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,20 @@ t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x)
 	return (res);
 }
 
-t_cmpx	cmpx_pow(t_cmpx z)
+t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn)
 {
 	t_cmpx	res;
 
-	res.r = (z.r * z.r) - (z.i * z.i);
-	res.i = 2 * z.r * z.i;
+	if (is_tricorn)
+	{
+		res.r = (z.r * z.r) - (z.i * z.i);
+		res.i = -2 * z.r * z.i;
+	}
+	else
+	{
+		res.r = (z.r * z.r) - (z.i * z.i);
+		res.i = 2 * z.r * z.i;
+	}
 	return (res);
 }
 
