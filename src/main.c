@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:52:57 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/26 21:46:05 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:34:29 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	error(void)
 {
 	ft_putstr_fd(RED "Here are the available fractals:\n" RESET, 2);
 	ft_putstr_fd("\t=> " GREEN "./fractol mandelbrot" RESET " <=\n\n", 2);
-	ft_putstr_fd("\t=> " YELLOW "./fractol julia zr zi" RESET " <=\n\n", 2);
+	ft_putstr_fd("\t=> " YELLOW "./fractol julia z.r z.i" RESET " <=\n\n", 2);
 	ft_putstr_fd("\t=> " GREEN "./fractol tricorn" RESET " <=\n", 2);
 	exit(EXIT_FAILURE);
 }

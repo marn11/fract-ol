@@ -6,20 +6,11 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/26 20:26:34 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/27 02:18:53 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
-
-t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x)
-{
-	t_cmpx	res;
-
-	res.r = z.r + x.r;
-	res.i = z.i + x.i;
-	return (res);
-}
 
 t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn)
 {
@@ -90,22 +81,30 @@ int	ft_atoi(const char *nptr)
 	return (result);
 }
 
+static void	setsign(char c, int *sign)
+{
+	if (c == '-' || c == '+')
+		if (c == '-')
+			*sign *= -1;
+}
+
 double	ft_atod(char *s)
 {
-	long		before_comma;
-	double		after_comma;
-	long double	power;
-	int			sign;
+	long			before_comma;
+	long double		after_comma;
+	long double		power;
+	int				sign;
 
 	before_comma = 0;
 	after_comma = 0;
 	sign = 1;
 	power = 1;
+	if (!check(s))
+		error();
 	while ((*s >= 9 && *s <= 13) || *s == 32)
 		s++;
-	while (*s == '-' || *s == '+')
-		if (*s++ == '-')
-			sign *= -1;
+	setsign(*s, &sign);
+	s++;
 	while (*s != '.' && *s)
 		before_comma = before_comma * 10 + (*s++ - '0');
 	if (*s == '.')

@@ -15,6 +15,7 @@ SRCS =	src/main.c \
 		src/events.c \
 		src/maths.c \
 		utils/utils1.c \
+		utils/utils2.c \
 
 OBJS = $(SRCS:.c=.o)
 

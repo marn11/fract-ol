@@ -6,7 +6,7 @@
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 11:16:31 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/26 21:45:51 by mbenchel         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:50:06 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,17 @@ void	ft_putstr_fd(char *s, int fd)
 int	check(char *s)
 {
 	int	i;
-	int	f_point;
 
 	i = 0;
-	f_point = 0;
-	if (!ft_strlen(s))
-		return (1);
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
+		i++;
 	if (s[i] == '-' || s[i] == '+')
 		i++;
-	if (!(s[i] >= '0' && s[i] <= '9'))
-		return (1);
-	while (s[i])
-	{
-		if (s[i] == '.')
-		{
-			if (!f_point)
-				f_point = 1;
-			else
-				return (1);
-		}
-		else if (!(s[i] >= '0' && s[i] <= '9'))
-			return (1);
-		i++;
-	}
-	return (0);
+	if (!part1(&i, s))
+		return (0);
+	if (i > 0 && s[i - 1] == '.' && !ft_isd(s[i]))
+		return (0);
+	if (s[i] && !part2(&i, s))
+		return (0);
+	return (1);
 }
