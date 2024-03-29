@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maths.c                                            :+:      :+:    :+:   */
+/*   maths_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 03:21:37 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/29 02:07:37 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/28 22:25:15 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/29 02:22:15 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "bonus_fractol.h"
 
-t_cmpx	cmpx_pow(t_cmpx z)
+t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn)
 {
 	t_cmpx	res;
 
-	res.r = (z.r * z.r) - (z.i * z.i);
-	res.i = 2 * z.r * z.i;
+	if (is_tricorn)
+	{
+		res.r = (z.r * z.r) - (z.i * z.i);
+		res.i = -2 * z.r * z.i;
+	}
+	else
+	{
+		res.r = (z.r * z.r) - (z.i * z.i);
+		res.i = 2 * z.r * z.i;
+	}
 	return (res);
 }
 

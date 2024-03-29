@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   bonus_fractol.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 11:34:22 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/29 02:34:20 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/28 22:10:04 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/29 01:48:28 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef BONUS_FRACTOL_H
+# define BONUS_FRACTOL_H
 
 # include <mlx.h>
 # include <math.h>
-# include "utils/utils.h"
+# include "../bonus_utils/bonus_utils.h"
 
 # define WIDTH 800
 # define HEIGHT 800
+# define SPACE 49
 # define ESC 53
 # define ENTER 36
 # define PLUS 69
 # define MINUS 78
+# define RIGHT 124
+# define LEFT 123
+# define UP 126
+# define DOWN 125
 # define ZOOM_IN_MOUSE 4
 # define ZOOM_OUT_MOUSE 5
 # define BLACK 0x000000
@@ -58,6 +63,8 @@ typedef struct s_fract
 	double	iter_max;
 	double	color;
 	double	zoom;
+	double	shift_y;
+	double	shift_x;
 	double	julia_x;
 	double	julia_y;
 	double	start_pos_x;
@@ -79,9 +86,9 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		mouse_press(int button, int x, int y, t_fract *fractal);
 int		key_press(int keycode, t_fract *fractal);
 int		close_window(t_fract *fractal);
-t_cmpx	cmpx_pow(t_cmpx z);
+t_cmpx	cmpx_pow(t_cmpx z, int is_tricorn);
 t_cmpx	cmpx_sum(t_cmpx z, t_cmpx x);
-t_cmpx	total(t_cmpx z, t_cmpx c);
+t_cmpx	total(t_cmpx z, t_cmpx c, t_fract *fract);
 void	error(void);
 
 #endif

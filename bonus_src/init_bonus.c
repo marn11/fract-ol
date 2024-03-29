@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   bonus_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 01:35:04 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/29 02:34:52 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/28 22:12:02 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/28 22:12:21 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "bonus_fractol.h"
 
 void	values(t_fract *fractal)
 {
 	fractal->iter_max = 42;
+	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
 	fractal->start_pos_x = -2;
 	fractal->end_pos_x = 2;

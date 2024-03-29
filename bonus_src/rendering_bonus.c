@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rendering.c                                        :+:      :+:    :+:   */
+/*   rendering_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbenchel <mbenchel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 00:31:55 by mbenchel          #+#    #+#             */
-/*   Updated: 2024/03/29 02:07:46 by mbenchel         ###   ########.fr       */
+/*   Created: 2024/03/28 22:25:42 by mbenchel          #+#    #+#             */
+/*   Updated: 2024/03/29 02:22:25 by mbenchel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "bonus_fractol.h"
 
 void	my_pixel_put(t_img *image, int x, int y, int color)
 {
